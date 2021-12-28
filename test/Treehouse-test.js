@@ -47,23 +47,23 @@ describe('Treehouse properties', function () {
 
 describe('Treehouse methods', function () {
 
-  it.skip('should be able to calculate a reduction in price', function () {
+  it('should be able to calculate a reduction in price', function () {
     const treehouse = new Treehouse(150, 2, 1, 'Aurora, CO');
-    expect(priceReduction(10)).to.equal(135);
+    expect(treehouse.priceReduction(10)).to.equal(135);
   });
 
-  it.skip('should update the price point based on price', function () {
+  it('should update the price point when less than 100', function () {
     const treehouse = new Treehouse(90, 2, 1, 'Aurora, CO');
-    expect(updatePricePoint(treehouse.price)).to.equal('$');
+    expect(treehouse.updatePricePoint()).to.equal('$');
   });
 
-  it.skip('should update the price point based on price', function () {
+  it('should update the price point when more than 100 but less than 200', function () {
     const treehouse = new Treehouse(150, 2, 1, 'Aurora, CO');
-    expect(updatePricePoint(treehouse.price)).to.equal('$$');
+    expect(treehouse.updatePricePoint()).to.equal('$$');
   });
 
-  it.skip('should update the price point based on price', function () {
+  it('should update the price point when price is over 200', function () {
     const treehouse = new Treehouse(250, 2, 1, 'Aurora, CO');
-    expect(updatePricePoint(treehouse.price)).to.equal('$$$');
+    expect(treehouse.updatePricePoint()).to.equal('$$$');
   });
 });
